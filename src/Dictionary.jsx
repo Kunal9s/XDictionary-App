@@ -1,16 +1,16 @@
 import React, { useState } from "react";
 
 const Dictionary = () => {
-  const [definition, setDefinition] = useState("");
+  const [answer, setAnswer] = useState("");
   const [searchWord, setSearchWord] = useState("");
 
   const data = [
     {
       word: "React",
-      meaning: "A JavaScript library for building user interfaces",
+      meaning: "A JavaScript library for building user interfaces."
     },
     { word: "Component", meaning: "A reusable building block in React." },
-    { word: "State", meaning: "An object that stores data for a component." },
+    { word: "State", meaning: "An object that stores data for a component." }
   ];
 
   const handleClick = () => {
@@ -18,9 +18,9 @@ const Dictionary = () => {
       i => i.word.toLowerCase() === searchWord.toLowerCase()
     );
     if (res) {
-       setDefinition(res.meaning);
+       setAnswer(res.meaning);
     } else {
-       setDefinition("Word not found in the dictionary.");
+       setAnswer("Word not found in the dictionary.");
     }
   };
 
@@ -44,7 +44,7 @@ const Dictionary = () => {
         <button onClick={handleClick}>Search</button>
       </span>
       <h3>Definition:</h3>
-      <p>{definition}</p>
+      <p>{answer}</p>
     </div>
   );
 };
