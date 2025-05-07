@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 
 const Dictionary = () => {
-  const [answer, setAnswer] = useState("");
+  const [definition, setDefinition] = useState("");
   const [searchWord, setSearchWord] = useState("");
 
   const data = [
@@ -18,9 +18,9 @@ const Dictionary = () => {
       i => i.word.toLowerCase() === searchWord.toLowerCase()
     );
     if (res) {
-      setAnswer(res.meaning);
+       setDefinition(res.meaning);
     } else {
-      setAnswer("Word not found in the dictionary.");
+       setDefinition("Word not found in the dictionary.");
     }
   };
 
@@ -44,7 +44,7 @@ const Dictionary = () => {
         <button onClick={handleClick}>Search</button>
       </span>
       <h3>Definition:</h3>
-      <p>{answer}</p>
+      <p>{definition}</p>
     </div>
   );
 };
