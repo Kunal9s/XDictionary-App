@@ -15,7 +15,7 @@ const Dictionary = () => {
 
   const handleClick = () => {
     const res = data.find(
-      (i) => i.word.toLowerCase() === searchWord.toLowerCase()
+      i => i.word.toLowerCase() === searchWord.toLowerCase()
     );
     if (res) {
       setAnswer(res.meaning);
